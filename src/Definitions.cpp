@@ -2,16 +2,24 @@
 #include "Util.h"
 #include "Definitions.h"
 
+/*----------------------------------------------------------------------------*/
+/*                                                                            */
+/*    Module:       Definitions.cpp                                           */
+/*    Author:       Andre Boufama                                             */
+/*    Created:      Fri Jan 15 2021                                           */
+/*    Description:  V5 project                                                */
+/*                                                                            */
+/*----------------------------------------------------------------------------*/
 
 
 void Init(){
 
 
-StopMotorsEnd(); // stops mall the motors
+StopMotorsEnd(); // stops mall the motors 
   
 Inertial16.calibrate();
 while(Inertial16.isCalibrating() ==true){ // calibrates inertial sensor
-  vex::task::sleep(250);
+  vex::task::sleep(250);// waits while calibrating
 }
 
 xRot.resetPosition();//resets encoder values
